@@ -154,15 +154,15 @@ Returns:
 apollo-vehicle-service/
 │
 ├── src/
-│   ├── app.js          # Express app, JSON parsing, error handling
-│   ├── db.js           # PostgreSQL connection pool
-│   ├── routes.js       # CRUD routes
-│   └── validate.js     # Input validation helpers
+│   ├── app.js          
+│   ├── db.js          
+│   ├── routes.js       
+│   └── validate.js    
 │
 ├── tests/
-│   └── vehicle.test.js # Jest + Supertest tests
+│   └── vehicle.test.js 
 │
-├── schema.sql          # Database schema
+├── schema.sql         
 ├── package.json
 ├── README.md
 └── .gitignore
