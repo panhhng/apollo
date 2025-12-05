@@ -1,6 +1,7 @@
-import pkg from "pg";
-const { Pool } = pkg;
+const { Pool } = require("pg");
 
-export const db = new Pool({
-  connectionString: "postgres://localhost/apollo"
+const db = new Pool({
+  connectionString: process.env.DATABASE_URL || "postgres://localhost:5432/apollo",
 });
+
+module.exports = { db };

@@ -1,5 +1,9 @@
-export function validateVehicle(v) {
+function validateVehicle(v) {
   const errors = {};
+
+  if (!v || typeof v !== "object") {
+    return { body: "Request body must be a JSON object" };
+  }
 
   if (!v.vin) errors.vin = "vin is required";
   if (!v.manufacturer_name) errors.manufacturer_name = "manufacturer_name is required";
@@ -18,3 +22,5 @@ export function validateVehicle(v) {
 
   return errors;
 }
+
+module.exports = { validateVehicle };

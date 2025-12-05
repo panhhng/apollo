@@ -1,8 +1,7 @@
-import request from "supertest";
-import app from "../src/app.js";
+const request = require("supertest");
+const app = require("../src/app");
 
 describe("Vehicle API", () => {
-
   test("Malformed JSON - 400", async () => {
     const res = await request(app)
       .post("/vehicle")
@@ -10,6 +9,7 @@ describe("Vehicle API", () => {
       .send("{bad json");
 
     expect(res.status).toBe(400);
+    expect(res.body.error).toBe("Malformed JSON");
   });
 
   test("Valid JSON but invalid fields - 422", async () => {
